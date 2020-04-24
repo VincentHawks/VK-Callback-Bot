@@ -1,10 +1,12 @@
 package com.heroku.vkcallbackbot.requests;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public abstract class AbstractRequest {
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class AbstractRequest {
     private String type;
-
 }
