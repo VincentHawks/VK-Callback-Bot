@@ -25,7 +25,7 @@ public class MessageService {
         stringBuilder.append("https://api.vk.com/method/messages.send?")
         .append("user_id=").append(user_id)
         .append("&random_id=").append(random.nextLong())
-        .append("&message=\"\"")
+        .append("&message=")
         .append("&forward_messages=").append(message_id)
         .append("&access_token=").append(accessToken)
         .append("&v=5.73/");
