@@ -17,9 +17,9 @@ public class Action {
 
     public String toJSONString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{\"payload\": \"").append(payload).append("\", ")
-                .append("\"type\": \"").append(type).append("\", ")
-                .append("\"label\": \"").append(label).append("\"}");
+        sb.append("{\"payload\":\"").append(payload).append("\",")
+                .append("\"type\":\"").append(type).append("\",")
+                .append("\"label\":\"").append(label).append("\"}");
         return sb.toString();
     }
 

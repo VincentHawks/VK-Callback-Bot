@@ -20,8 +20,8 @@ public class Button {
 
     public String toJSONString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{\"action\": ").append(action.toJSONString()).append(", ")
-                .append("\"color\": \"").append(color).append("\"}");
+        sb.append("{\"action\":").append(action.toJSONString()).append(",")
+                .append("\"color\":\"").append(color).append("\"}");
         return sb.toString();
     }
 
