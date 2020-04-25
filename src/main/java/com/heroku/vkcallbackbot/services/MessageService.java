@@ -56,12 +56,13 @@ public class MessageService {
                 .append("user_id=").append(user_id)
                 .append("&random_id=").append(random.nextLong())
                 .append("&message=").append(message)
-                .append("&keyboard=").append(keyboard.toJSONString())
+                .append("&keyboard={kb_val}")
                 .append("&access_token=").append(accessToken)
                 .append("&v=5.73/");
 
         String url = stringBuilder.toString();
-        this.restTemplate.getForObject(url, String.class);
+        String kb_val = keyboard.toJSONString();
+        this.restTemplate.getForObject(url, String.class, kb_val);
     }
 
 }

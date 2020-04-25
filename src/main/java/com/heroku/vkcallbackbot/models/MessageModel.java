@@ -26,6 +26,6 @@ public class MessageModel {
 
 
     public boolean hasAttachments() {
-        return attachments == null;
+        return attachments != null;
     }
 }
