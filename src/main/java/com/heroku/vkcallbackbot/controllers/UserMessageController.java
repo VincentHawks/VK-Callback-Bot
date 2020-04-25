@@ -26,9 +26,9 @@ public class UserMessageController {
 
     public void processMessage(MessageModel message) {
         if(message.hasAttachments()) {
-            messageService.forward(message.getId(), moderator_id);
-        } else {
             messageService.send(message.getBody(), message.getUser_id());
+        } else {
+            messageService.forward(message.getId(), moderator_id);
         }
     }
 
