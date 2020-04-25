@@ -13,8 +13,9 @@ public abstract class KeyboardFactory {
         for(int i = 0; i < buttons.length; i++) {
             container.add(new ArrayList<Button>());
             for(int j = 0; j < buttons[i].length; j++) {
-                container.get(i).add(new Button());
-                container.get(i).get(j).setAction(new Action("", "text", buttons[i][j]));
+                container.get(i).add(new Button(
+                        new Action("", "text", buttons[i][j]),
+                        "secondary"));
             }
         }
         return new KeyboardModel(container, true);
