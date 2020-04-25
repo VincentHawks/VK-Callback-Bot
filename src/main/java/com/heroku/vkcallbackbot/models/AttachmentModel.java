@@ -1,12 +1,14 @@
-package com.heroku.vkcallbackbot.requests;
+package com.heroku.vkcallbackbot.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class AbstractRequest {
+@NoArgsConstructor
+public class AttachmentModel {
+
     private String type;
+
 }
