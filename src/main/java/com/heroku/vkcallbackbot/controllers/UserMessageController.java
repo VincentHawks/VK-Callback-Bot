@@ -1,6 +1,7 @@
 package com.heroku.vkcallbackbot.controllers;
 
 
+import com.heroku.vkcallbackbot.factories.KeyboardFactory;
 import com.heroku.vkcallbackbot.models.MessageModel;
 import com.heroku.vkcallbackbot.models.RequestModel;
 import com.heroku.vkcallbackbot.services.MessageService;
@@ -26,9 +27,11 @@ public class UserMessageController {
 
     public void processMessage(MessageModel message) {
         if(message.hasAttachments()) {
-            messageService.send(message.getBody(), message.getUser_id());
-        } else {
             messageService.forward(message.getId(), moderator_id);
+        } else {
+            String[][] keyboardLayout = {{"1", "2"}, {"3", "4"}};
+            messageService.send(message.getBody(), message.getUser_id(),
+                    KeyboardFactory.makeKeyboard(keyboardLayout));
         }
     }
 

@@ -1,5 +1,6 @@
 package com.heroku.vkcallbackbot.services;
 
+import com.heroku.vkcallbackbot.models.KeyboardModel;
 import com.heroku.vkcallbackbot.models.MessageModel;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -41,6 +42,21 @@ public class MessageService {
                 .append("user_id=").append(user_id)
                 .append("&random_id=").append(random.nextLong())
                 .append("&message=").append(message)
+                .append("&access_token=").append(accessToken)
+                .append("&v=5.73/");
+
+        String url = stringBuilder.toString();
+        this.restTemplate.getForObject(url, String.class);
+    }
+
+    public void send(String message, long user_id, KeyboardModel keyboard) {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("https://api.vk.com/method/messages.send?")
+                .append("user_id=").append(user_id)
+                .append("&random_id=").append(random.nextLong())
+                .append("&message=").append(message)
+                .append("&keyboard=").append(keyboard.toJSONString())
                 .append("&access_token=").append(accessToken)
                 .append("&v=5.73/");
 
