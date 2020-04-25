@@ -14,9 +14,9 @@ public class UserMessageController {
     private boolean confirmed = false;
 
     @PostMapping("/")
-    public ResponseEntity<String> resolveCall(@RequestBody AbstractRequest request) {
-        if(request.getType().equals("confirmation")) return new ResponseEntity<>("bbda2286", HttpStatus.OK);
-        else return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<String> resolveCall(@RequestBody String request) {
+        System.out.println(request);
+        return new ResponseEntity<>("Ok", HttpStatus.OK);
     }
 
 }
